@@ -1,0 +1,10 @@
+2024-03-06 11:23:46,707 - example_logger - DEBUG - This is a debug message
+2024-03-06 11:23:46,708 - example_logger - INFO - This is an info message
+2024-03-06 11:23:46,708 - example_logger - WARNING - This is a warning message
+2024-03-06 11:23:46,708 - example_logger - ERROR - This is an error message
+2024-03-06 11:23:46,709 - example_logger - CRITICAL - This is a critical message
+2024-03-06 11:25:19,512 - example_logger - DEBUG - This is a debug message
+2024-03-06 11:25:19,512 - example_logger - INFO - This is an info message
+2024-03-06 11:25:19,512 - example_logger - WARNING - This is a warning message
+2024-03-06 11:25:19,513 - example_logger - ERROR - This is an error message
+2024-03-06 11:25:19,513 - example_logger - CRITICAL - This is a critical message
