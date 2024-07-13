@@ -41,7 +41,9 @@ class Main():
         는 서로 on/off해가며 번갈아 가면서 사용하도록 한다.
         '''
         #키움증권 꾸러기주식 검색식 엑셀로 저장하기
-        # self.setKiwoomConditionStockList()
+        self.setKiwoomConditionStockList()
+        
+        print('요기')
 
         # 상위 self.setKiwoomConditionStockList()는 검색식에 포함된 종목을 가져와서
         # 엑셀로 저장하고 모두 저장이 된 이후에 self.read_excel()을 실행하여 정보를 활용하는데
@@ -49,8 +51,8 @@ class Main():
         # 대상 종목의 엑셀 파일이 저장되어 있다는 전제하에 self.read_excel()를 바로 실행시킨다.
 
         #self.stocks의 용도는 종목의 이름을 가져오기 위해 사용하고 있음 (2024.07.05 현재 까지는 향후에 더 쓸일이 있겠지)
-        self.stocks = fdr.StockListing('KRX')
-        self.read_excel()
+        #self.stocks = fdr.StockListing('KRX')
+        #self.read_excel()
 
     '''    
     총부채증감율 : 최근결산기의 전년대비 증감률 200% 이하
@@ -117,11 +119,13 @@ class Main():
     #         {sCode: {'Open': dfOpen, 'High': dfHigh, 'Low': dfLow, 'Close': dfClose, 'Volume': dfVolume}})
 
     def setKiwoomConditionStockList(self):
+        print('물갈이가 되야해', self.myKiwoomConditionStockList)
+        '''
         self.stocks = fdr.StockListing('KRX')
-
+        print(self.stocks)
+        '''
         i = 1
         for sCode in self.myKiwoomConditionStockList:
-
             ea = 365
             df = fdr.DataReader(sCode)
             # print('[%s / %s] 종목명 : %s' % (i, len(self.myKiwoomConditionStockList), self.getStockName(sCode)))
@@ -131,7 +135,6 @@ class Main():
 
             if i == len(self.myKiwoomConditionStockList):
                 self.read_excel()
-
     def read_excel(self):
         # cci용 디렉토리 내의 모든 파일에 대해 루프를 돌면서 파일명 추출
         for filename in os.listdir("xlsxTimeTestConditions"):
